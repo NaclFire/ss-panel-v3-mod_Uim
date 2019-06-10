@@ -36,7 +36,8 @@ function install_ss_panel_mod_UIm(){
 	yum install unzip zip git -y
 	wget -c --no-check-certificate https://raw.githubusercontent.com/NaclFire/ss-panel-v3-mod_Uim/master/lnmp1.5.zip && unzip lnmp1.5.zip && rm -rf lnmp1.5.zip && cd lnmp1.5 && chmod +x install.sh && ./install.sh lnmp
 	cd /home/wwwroot/
-	cp -r default/phpmyadmin/ .  #复制数据库
+	# 移动phpmyadmin
+	mv default/phpmyadmin/ .
 	cd default
 	rm -rf index.html
 	yum update nss curl iptables -y
